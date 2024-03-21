@@ -1,0 +1,62 @@
+class ATM:
+    def _init_(self, bank_name, location):
+        self.bank_name = bank_name
+        self.location = location
+        self.accounts = {}
+
+    def authenticate_user(self, card_number, pin):
+        # Code to authenticate user
+        pass
+
+    def perform_transaction(self, user_account):
+        # Code to perform transaction
+        pass
+
+class Account:
+    def _init_(self, account_number, balance):
+        self.account_number = account_number
+        self.balance = balance
+
+    def deposit(self, amount):
+        # Code to deposit amount
+        pass
+
+    def withdraw(self, amount):
+        # Code to withdraw amount
+        pass
+
+class Bank:
+    def _init_(self, name):
+        self.name = name
+        self.atms = []
+        self.customers = []
+
+    def add_atm(self, atm):
+        # Code to add ATM
+        pass
+
+    def add_customer(self, customer):
+        # Code to add customer
+        pass
+
+class Card:
+    def _init_(self, card_number, pin, account):
+        self.card_number = card_number
+        self.pin = pin
+        self.account = account
+
+class Customer:
+    def _init_(self, name, card):
+        self.name = name
+        self.card = card
+
+# Example usage:
+bank = Bank("MyBank")
+customer_account = Account("123456789", 1000)
+customer_card = Card("987654321", "1234", customer_account)
+customer = Customer("John Doe", customer_card)
+bank.add_customer(customer)
+my_atm = ATM(bank.name, "123 Main St")
+bank.add_atm(my_atm)
+
+# The user would interact with the ATM class to perform transactions.
